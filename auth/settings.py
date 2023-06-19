@@ -128,8 +128,8 @@ CORS_ORIGIN_REGEX_WHITELIST = [
     r"^https://\w+\.netlify\.app$",
 ]
 #----------------Google credential----------------------------#
-GOOGLE_CLIENT_ID = "728706341525-7ihkcqms8c4hj3lprl4tpd5h32816smr.apps.googleusercontent.com"
-SOCIAL_SECRET = "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"
+GOOGLE_CLIENT_ID = ""
+SOCIAL_SECRET = ""
 
 WSGI_APPLICATION = 'auth.wsgi.application'
 
