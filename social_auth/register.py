@@ -1,6 +1,6 @@
 from accounts.serializers import UserSerializer
 from django.contrib.auth import authenticate
-from .models import User
+from accounts.models import User
 import os
 import random
 from rest_framework.exceptions import AuthenticationFailed
@@ -36,10 +36,11 @@ def register_social_user(provider, user_id, email, name):
     else:
         user = {
             'username': generate_username(name), 'email': email,
-            'password': ''}
+            'password': 'adminitration'}
         user = User.objects.create_user(**user)
         user.is_verified = True
         user.auth_provider = provider
+        
         user.save()
         print("new user           :")
 

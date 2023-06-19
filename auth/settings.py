@@ -27,8 +27,9 @@ SECRET_KEY = 'django-insecure-n=dru6@f7#7m0v#$ndcrn_w1_yf(x_(dg0#xj9(mgwou1*i@^@
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-AUTH_USER_MODE = 'social_auth.User'
+# AUTH_USER_MODEL = 'social_auth.user'
 ALLOWED_HOSTS = []
+
 
 
 # Application definition
@@ -41,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'accounts',
+    # "rest_auth",
     'rest_framework',  # Django rest framework (drf)
     'rest_framework.authtoken',  # Adding token based authentication from drf
     'rest_framework_simplejwt.token_blacklist',
@@ -90,6 +92,10 @@ SIMPLE_JWT = {
 #     'django.contrib.auth.backends.ModelBackend',
 #     # 'social_core.backends.google.GoogleOAuth2',
 # ]
+AUTHENTICATION_BACKENDS = (
+   "django.contrib.auth.backends.ModelBackend",
+#    "allauth.account.auth_backends.AuthenticationBackend"
+)
 
 ROOT_URLCONF = 'auth.urls'
 
@@ -121,7 +127,9 @@ CORS_ORIGIN_WHITELIST = [
 CORS_ORIGIN_REGEX_WHITELIST = [
     r"^https://\w+\.netlify\.app$",
 ]
-
+#----------------Google credential----------------------------#
+GOOGLE_CLIENT_ID = "728706341525-7ihkcqms8c4hj3lprl4tpd5h32816smr.apps.googleusercontent.com"
+SOCIAL_SECRET = "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"
 
 WSGI_APPLICATION = 'auth.wsgi.application'
 

@@ -2,7 +2,7 @@ from rest_framework import serializers
 from . import google, facebook, twitter
 from .register import register_social_user
 import os
-from.models import User
+from accounts.models import User
 from rest_framework.exceptions import AuthenticationFailed
 
 
