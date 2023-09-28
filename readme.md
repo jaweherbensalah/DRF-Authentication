@@ -1,3 +1,4 @@
+
 # Debugging Jobs in GitLab CI
 ### Setting up a Docker runner
 
@@ -92,5 +93,7 @@ $ gitlab-runner exec shell build-job
 
 **Job succeeded**
 
-file:///home/user/Pictures/Screenshots/Screenshot%20from%202023-09-28%2007-02-50.png
+  ![Alt text](https://github.com/jaweherbensalah/Notes/assets/44945010/a4dbff98-1ae2-4484-a358-56f9acf814a3)
+
+
 
