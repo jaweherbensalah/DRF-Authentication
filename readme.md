@@ -92,6 +92,6 @@ $ gitlab-runner exec shell build-job
 
 **Job succeeded**
 
-![](https://gitlab.com/jaweherbensalah/DRF_Authentication/-/blob/master/Screenshot_from_2023-09-28_07-02-50.png)
+![](https://gitlab.com/jaweherbensalah/DRF_Authentication/-/raw/master/Screenshot_from_2023-09-28_07-02-50.png?ref_type=heads)
 
 
