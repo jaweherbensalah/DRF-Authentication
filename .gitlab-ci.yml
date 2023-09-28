@@ -1,8 +1,8 @@
-stages:     
+stages:
   - build
   - test
 
-build-job:       
+build-job:
   stage: build
   tags:
     - vm-runner
@@ -14,12 +14,14 @@ build-job:
   artifacts:
     paths:
       - ./myfile.txt
+  image: alpine:latest
 
-unit-test-job: 
+unit-test-job:
   tags:
     - vm-runner
-  stage: test    
+  stage: test
   script:
     - echo "Running unit tests..."
     - ls
     - test -f myfile.txt
+  image: alpine:latest
