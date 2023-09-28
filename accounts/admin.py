@@ -1,3 +1,8 @@
 from django.contrib import admin
+from .models import Person
+from modeltranslation.admin import TranslationAdmin
 
-# Register your models here.
+class PersonAdmin(TranslationAdmin):
+    pass
+
+admin.site.register(Person)

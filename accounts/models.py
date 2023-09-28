@@ -72,3 +72,12 @@ def create_auth_token(sender, instance=None, created=False, **kwargs):
         print('///')
         print(settings.AUTH_USER_MODEL)
 
+
+
+class Person(models.Model):
+    name = models.CharField(max_length=200)
+    surname = models.CharField(max_length=200)
+    profession = models.CharField(max_length=300)
+
+    def __str__(self) -> str:
+        return self.name

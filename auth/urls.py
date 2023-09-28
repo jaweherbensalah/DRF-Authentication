@@ -9,10 +9,11 @@ from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
 from django.conf.urls.i18n import i18n_patterns
 from rest_framework.routers import DefaultRouter
-from translation.views import PostViewSet
+from translation.views import PostViewSet, TranslationTestViewSet
 
 router= DefaultRouter()
-router.register('', PostViewSet)
+router.register('posts', PostViewSet)
+router.register('test', TranslationTestViewSet)
 
 
 schema_view = get_schema_view(
