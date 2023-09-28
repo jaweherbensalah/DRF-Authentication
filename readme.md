@@ -23,7 +23,7 @@ Runtime platform                                    arch=amd64 os=linux pid=3635
 gitlab-runner: Service is running
 
 
-### Register a Docker runner so you can run a job locally
+### Register a Docker runner so you can run a job locally 
 
 ```
 $ sudo gitlab-runner register 
@@ -84,9 +84,15 @@ Running in system-mode.
 # Adjusting jobs so they can run locally
 
  This is the command to run the job to debug:
+
+
 ```
-$ gitlab-runner exec docker build-job (job name)
+$ gitlab-runner exec shell build-job
 ```
+
+**Job succeeded**
+
+![image](https://github.com/jaweherbensalah/Notes/assets/44945010/a4dbff98-1ae2-4484-a358-56f9acf814a3)
 
 
 
