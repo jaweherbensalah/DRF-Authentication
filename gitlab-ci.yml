@@ -5,7 +5,7 @@ stages:
 build-job:       
   stage: build
   tags:
-    - vm-shell
+    - vm-runner
   script:
     - echo "Compiling the code..."
     - pwd
@@ -17,7 +17,7 @@ build-job:
 
 unit-test-job: 
   tags:
-    - vm-shell
+    - vm-runner
   stage: test    
   script:
     - echo "Running unit tests..."
