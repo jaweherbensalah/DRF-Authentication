@@ -1,15 +1,21 @@
 
 # Debugging Jobs in GitLab CI
 ### Setting up a Docker runner
-** $ sudo apt update **
 
+```
+$ sudo apt update
+```
 
+```
 $ curl -LJO https://gitlab-runner-downloads.s3.amazonaws.com/latest/deb/gitlab-runner_amd64.deb
+```
 
+```
 $ sudo dpkg -i gitlab-runner_amd64.deb
-
+```
+```
 $ sudo gitlab-runner start
-
+```
 Runtime platform                                    arch=amd64 os=linux pid=35796 revision=6e766faf version=16.4.0
 
 $ sudo gitlab-runner status
@@ -59,11 +65,24 @@ python:3.8
 Runner registered successfully. Feel free to start it, but if it's running already the config should be automatically reloaded!
  
 Configuration (with the authentication token) was saved in "/etc/gitlab-runner/config.toml" 
-
+```
 $ sudo gitlab-runner verify
+```
 
 Runtime platform                                    arch=amd64 os=linux pid=40990 revision=6e766faf version=16.4.0
 Running in system-mode.                            
                                                    
-** Verifying runner... is alive                        runner= .. **
+**Verifying runner... is alive                        runner= ..**
+
+
+# Add a gitalb-ci.yml file with some jobs
+
+# Adjusting jobs so they can run locally
+
+ This is the command to run the job to debug:
+```
+$ gitlab-runner exec docker
+```
+
+
 
