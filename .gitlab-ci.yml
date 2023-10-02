@@ -20,9 +20,13 @@ unit-test-job:
   tags:
     - vm-runner
   stage: test
+  artifacts:
+    paths:
+      - ./myfile.txt
   script:
     - echo "Running unit tests..."
     - ls
+    - sleep 1h
     - test -f myfile.txt
   image: alpine:latest
   needs:
