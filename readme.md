@@ -87,11 +87,15 @@ Running in system-mode.
 
 
 ```
-$ gitlab-runner exec shell build-job
+$ gitlab-runner exec docker build-job
 ```
 
 **Job succeeded**
 
 ![](https://gitlab.com/jaweherbensalah/DRF_Authentication/-/raw/master/Screenshot_from_2023-09-28_07-02-50.png?ref_type=heads)
 
+```
+$ gitlab-runner exec docker unit-test-job
+```
 
+**Job succeeded**

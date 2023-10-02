@@ -25,3 +25,5 @@ unit-test-job:
     - ls
     - test -f myfile.txt
   image: alpine:latest
+  needs:
+    - job: build-job
