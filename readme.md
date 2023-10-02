@@ -81,7 +81,7 @@ Running in system-mode.
 ```
 gitlab-runner list
 ```
-## Execut a GitLab CI/CD job locally using the gitlab-runner exec docker command 
+## Execute a GitLab CI/CD job locally using the gitlab-runner exec docker command 
 ### Add a gitalb-ci.yml file with some jobs
 
 ### Adjusting jobs so they can run locally
@@ -120,6 +120,50 @@ NAMES           runner--project-0-concurrent-0-02aba32703244a96-build
 
 ```
 docker exec -it runner--project-0-concurrent-0-8ef7d674b79ffcff-build  ash
+```
+
+Once in the container, you'll need to locate the source code. GitLab Runner creates a directory called builds at the root of the container’s file system. Once there, you can see your project files and you're ready to debug the failing job:
+
+```
+$ docker exec -it runner--project-0-concurrent-0-a5ee1e548d3130ec-build ash
+/ # ls
+bin     dev     home    media   opt     root    sbin    sys     usr
+builds  etc     lib     mnt     proc    run     srv     tmp     var
+/ # pwd
+/
+/ # cd home
+/home # ls
+user
+/home # cd user
+/home/user # ls
+Desktop
+/home/user # cd Desktop 
+/home/user/Desktop # ls
+Projects
+/home/user/Desktop # cd Projects
+/home/user/Desktop/Projects # ls
+auth
+/home/user/Desktop/Projects # cd auth 
+/home/user/Desktop/Projects/auth # ls
+manage.py
+accounts                                 readme.md
+auth                                     requirements.txt
+builds                                   social_auth
+db.sqlite3                               templates
+env                                      translation
+locale
+
+/home/user/Desktop/Projects/auth # cd /builds/
+/builds # cd project-0
+/builds/project-0 # ls
+manage.py
+accounts                                 readme.md
+auth                                     requirements.txt
+builds                                   social_auth
+db.sqlite3                               translation
+locale
+/builds/project-0 # 
+
 ```
 ## Next steps
 
